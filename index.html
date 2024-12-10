@@ -1,0 +1,76 @@
+<html>
+  <head>
+     	<title>even odd app by sanskruti</title>
+   	<style> 
+		*{font-size:50px;}
+		body{background-color:blue;}
+	</style>
+     
+ </head>
+<body>
+     	<center>
+		<h2>EVEN ODD APP</h2>
+		<form onsubmit="check()">
+			<input type="number"  placeholder="enter number" id="num"/><br/><br/>
+			<input type="submit" value="M1"/>
+			<input type="submit" value="M2"/>
+			<input type="submit" value="M3"/>
+      		</form>
+		<h2 id="msg"/>
+		<script>
+			function check()
+			{
+				event.preventDefault();
+				let num=document.getElementById("num");
+				let msg=document.getElementById("msg");
+				let action=document.activeElement.value;
+				
+				if(num.value==="")
+				{
+					alert("please enter the no.");
+					msg.innerHTML="";
+					num.focus();
+					return;
+				}
+
+				let n=parseInt(num.value);
+
+				if(action==="M1")
+				{
+					let ans="";
+					if(n%2===0)
+					{
+						ans="M1= even";
+					}
+					else
+					{
+						ans="M1= odd";
+					}
+					msg.innerHTML=ans;
+				}
+
+				else if(action==="M2")
+				{
+					let ans=n%2===0?"even":"odd";
+				 	msg.innerHTML="M2= "+ans;
+				}
+				
+				else if(action==="M3")
+				{
+					let ans="";
+					switch(n%2)
+					{
+						case 0  : ans="M3= even";break;
+						default : ans="M3= odd";break;
+					}
+					msg.innerHTML=ans;
+				}
+				
+			}
+		</script>
+
+	</center>
+	
+
+</body>
+</html>
